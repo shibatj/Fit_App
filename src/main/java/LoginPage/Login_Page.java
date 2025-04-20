@@ -88,7 +88,7 @@ public class Login_Page extends javax.swing.JFrame {
 
         usr_txt.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/fitness_eiei.png"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\phanu\\OneDrive - Huachiew Chalermprakiet University\\Documents\\Fit_App_0_1_1\\picture\\fitness_eiei.png")); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
