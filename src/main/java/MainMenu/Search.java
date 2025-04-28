@@ -6,6 +6,8 @@ package MainMenu;
 
 import java_class.Member;
 import java_class.MemberManager;
+import setting.new_info;
+
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -133,7 +135,6 @@ public class Search extends javax.swing.JFrame {
         try {
             int searchID = Integer.parseInt(input);
             Member foundMember = memberManager.search(searchID);
-            
 
             if (foundMember != null) {
                 info.name_show.setText(foundMember.getName());
@@ -142,19 +143,21 @@ public class Search extends javax.swing.JFrame {
                 info.loc_show.setText(foundMember.getLocation()); 
                 info.pac_show.setText(foundMember.getPackage()); 
                 info.mem_show.setText(foundMember.getMembership()); 
+
+                int index = memberManager.getIndex();
+                info.setMemberIndex(foundMember, index);
+
                 info.setVisible(true);
+
                 this.dispose();
 
             } else {
-                // Show a warning message if no member is found
                 JOptionPane.showMessageDialog(null, "No member found with ID: " + searchID, "Not Found", JOptionPane.WARNING_MESSAGE);
             }
 
         } catch (NumberFormatException e) {
-            // Show an error message if the input format is invalid
             JOptionPane.showMessageDialog(null, "Invalid ID format. Please enter a number.", "Error", JOptionPane.ERROR_MESSAGE);
         } finally {
-            // Optionally, clear the text field after search
             search_txt.setText("");
         }
     }//GEN-LAST:event_search_btnActionPerformed

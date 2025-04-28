@@ -4,17 +4,27 @@
  */
 package MainMenu;
 
+import java_class.Member;
+import setting.new_info;
 /**
  *
  * @author phanu
  */
 public class Info_Member extends javax.swing.JFrame {
+    
+    private Member editingMember;
+    private int memberIndex;
 
     /**
      * Creates new form Info_Member
      */
     public Info_Member() {
         initComponents();
+    }
+
+    public void setMemberIndex(Member member, int index) {
+        this.editingMember = member;
+        this.memberIndex = index;
     }
 
     /**
@@ -42,6 +52,7 @@ public class Info_Member extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
+        setting_btn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -117,6 +128,14 @@ public class Info_Member extends javax.swing.JFrame {
 
         jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\phanu\\OneDrive - Huachiew Chalermprakiet University\\Documents\\Fit_App_0_1_1\\picture\\member_information.png")); // NOI18N
 
+        setting_btn.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        setting_btn.setText("setting");
+        setting_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                setting_btnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -146,10 +165,12 @@ public class Info_Member extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addComponent(jLabel1)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(385, 385, 385))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(322, 322, 322)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(setting_btn)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -184,9 +205,11 @@ public class Info_Member extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(mem_show)
                                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addGap(18, 18, 18)
-                .addComponent(jButton1)
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(setting_btn)
+                    .addComponent(jButton1))
+                .addGap(33, 33, 33))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -197,7 +220,9 @@ public class Info_Member extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -210,6 +235,14 @@ public class Info_Member extends javax.swing.JFrame {
         mainMenu.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void setting_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_setting_btnActionPerformed
+        // TODO add your handling code here:
+        new_info infoWindow = new new_info(editingMember, memberIndex);
+        infoWindow.setVisible(true);
+        this.dispose();
+        
+    }//GEN-LAST:event_setting_btnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -263,5 +296,6 @@ public class Info_Member extends javax.swing.JFrame {
     public static javax.swing.JLabel name_show;
     public static javax.swing.JLabel pac_show;
     public static javax.swing.JLabel phone_show;
+    private javax.swing.JButton setting_btn;
     // End of variables declaration//GEN-END:variables
 }

@@ -5,6 +5,9 @@
 package MainMenu;
 
 import java_class.Member;
+
+import java.util.LinkedList;
+
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -20,15 +23,18 @@ public class All_Member extends javax.swing.JFrame {
         initComponents();
     }
     
-    public All_Member(Member[] mem, int index){
+    public All_Member(LinkedList<Member> mem) {
         initComponents();
-        DefaultTableModel model = (DefaultTableModel)show_all.getModel();
-        for(int i=0; i<index; i++){
-            model.addRow(new Object[0]);
-            model.setValueAt(mem[i].getID(),i,0);
-            model.setValueAt(mem[i].getName(),i,1);
-            model.setValueAt(mem[i].getPackage(),i,2);
-            model.setValueAt(mem[i].getMembership(),i,3);
+        DefaultTableModel model = (DefaultTableModel) show_all.getModel();
+        model.setRowCount(0);
+    
+        for (Member member : mem) {
+            model.addRow(new Object[]{
+                member.getID(),
+                member.getName(),
+                member.getPackage(),
+                member.getMembership()
+            });
         }
     }
 

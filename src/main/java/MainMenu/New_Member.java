@@ -55,12 +55,10 @@ public class New_Member extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
         email_txt = new javax.swing.JTextField();
         name_txt = new javax.swing.JTextField();
         phone_txt = new javax.swing.JTextField();
         loc_txt = new javax.swing.JTextField();
-        pic_ch = new javax.swing.JComboBox<>();
         mem_ch = new javax.swing.JComboBox<>();
         pac_ch = new javax.swing.JComboBox<>();
         add_btn = new javax.swing.JButton();
@@ -103,11 +101,6 @@ public class New_Member extends javax.swing.JFrame {
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel7.setText("Member :");
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel8.setText("Picture :");
-
         email_txt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 email_txtActionPerformed(evt);
@@ -132,13 +125,6 @@ public class New_Member extends javax.swing.JFrame {
             }
         });
 
-        pic_ch.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        pic_ch.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pic_chActionPerformed(evt);
-            }
-        });
-
         mem_ch.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         mem_ch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -160,7 +146,6 @@ public class New_Member extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
@@ -172,7 +157,6 @@ public class New_Member extends javax.swing.JFrame {
                     .addComponent(name_txt)
                     .addComponent(email_txt)
                     .addComponent(phone_txt)
-                    .addComponent(pic_ch, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(mem_ch, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(pac_ch, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -209,11 +193,7 @@ public class New_Member extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel7)
                     .addComponent(mem_ch, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel8)
-                    .addComponent(pic_ch, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         add_btn.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
@@ -359,10 +339,6 @@ public class New_Member extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_loc_txtActionPerformed
 
-    private void pic_chActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pic_chActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_pic_chActionPerformed
-
     private void mem_chActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mem_chActionPerformed
         // TODO add your handling code here:
         selectMemberShip = (String) mem_ch.getSelectedItem();
@@ -429,7 +405,6 @@ public class New_Member extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -438,6 +413,5 @@ public class New_Member extends javax.swing.JFrame {
     private javax.swing.JTextField name_txt;
     private javax.swing.JComboBox<String> pac_ch;
     private javax.swing.JTextField phone_txt;
-    private javax.swing.JComboBox<String> pic_ch;
     // End of variables declaration//GEN-END:variables
 }

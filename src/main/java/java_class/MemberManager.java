@@ -1,61 +1,58 @@
 package java_class;
 
-import java.util.ArrayList;
-import javax.swing.JOptionPane;
+import java.util.LinkedList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class MemberManager {
+
+    static LinkedList<Member> mem = new LinkedList<>();
     
-    static Member[] mem = new Member[100];
-    static int index = 0;
-    
-//    public static void addMember(String name, String email, String phone, String location, String Mem_pac, String membership, int totalPrice) {
-//        Member newMember = new Member(name, email, phone, location, Mem_pac, membership, totalPrice);
-//        mem.add(newMember);
-//        System.out.println("Member added: " + newMember.getID() + " - " + newMember.getName());
-//    }
-    
-//    public static void showAllMembers() {
-//        if (members.isEmpty()) {
-//            JOptionPane.showMessageDialog(null, "No members found.");
-//        } else {
-//            StringBuilder memberInfo = new StringBuilder();
-//            for (Member member : members) {
-//                memberInfo.append("\nID : ").append(member.getID())
-//                          .append("\nName : ").append(member.getName())
-//                          .append("\nLockerID : ").append(member.getLockerID())
-//                          .append("\nPackage : ").append(member.getPackage())
-//                          .append("\nMemberShip : ").append(member.getMembership())
-//                          .append("\nTotal Price : ").append(member.getTotalPrice())
-//                          .append("\n--------------------------");
-//            }
-//            JOptionPane.showMessageDialog(null, memberInfo.toString(), "All Members", JOptionPane.INFORMATION_MESSAGE);
-//        }
-//    }
-    
-    public void input(Member m){
-        mem[index++] = m;
+    public void input(Member m) {
+        mem.add(m);
     }
-    public Member[] getMember(){
+    
+    public LinkedList<Member> getMember() {
         return mem;
     }
-    public int getIndex(){
-        return index;
+    
+    public int getIndex() {
+        return mem.size();
     }
     
-    public Member search(int id){
-        boolean check = false;
-        int i = 0;
-        while((i<index)&&(!check)){
-            if(mem[i].getID() == id){
-                check = true;
-            }else{
-                i++;
+    public Member search(int id) {
+        Collections.sort(mem, Comparator.comparingInt(Member::getID));
+
+        int left = 0;
+        int right = mem.size() - 1;
+
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            int midID = mem.get(mid).getID();
+
+            if (midID == id) {
+                return mem.get(mid);
+            } else if (midID < id) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
             }
         }
-        if(check){
-            return mem[i];
-        }else{
-            return null;
+        return null;
+    }
+
+    public boolean updateMember(Member updatedMember) {
+        for (int i = 0; i < mem.size(); i++) { // ใช้ 'mem' แทน 'members'
+            if (mem.get(i).getID() == updatedMember.getID()) { // ใช้ '==' แทน '.equals()' เพราะ getID() คืนค่าประเภท int
+                mem.set(i, updatedMember); // ใช้ 'mem' แทน 'members'
+                saveMembers(); // บันทึกข้อมูลลงไฟล์/ฐานข้อมูล
+                return true;
+            }
         }
+        return false;
+    }
+
+    private void saveMembers() {
+        // คุณสามารถเขียนโค้ดเพื่อบันทึกข้อมูลที่แก้ไขลงไฟล์ หรือฐานข้อมูล
     }
 }
