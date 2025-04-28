@@ -42,17 +42,25 @@ public class MemberManager {
     }
 
     public boolean updateMember(Member updatedMember) {
-        for (int i = 0; i < mem.size(); i++) { // ใช้ 'mem' แทน 'members'
-            if (mem.get(i).getID() == updatedMember.getID()) { // ใช้ '==' แทน '.equals()' เพราะ getID() คืนค่าประเภท int
-                mem.set(i, updatedMember); // ใช้ 'mem' แทน 'members'
-                saveMembers(); // บันทึกข้อมูลลงไฟล์/ฐานข้อมูล
+        for (int i = 0; i < mem.size(); i++) {
+            if (mem.get(i).getID() == updatedMember.getID()) {
+                mem.set(i, updatedMember);
                 return true;
             }
         }
         return false;
     }
 
-    private void saveMembers() {
-        // คุณสามารถเขียนโค้ดเพื่อบันทึกข้อมูลที่แก้ไขลงไฟล์ หรือฐานข้อมูล
+    public boolean deleteMember(int id) {
+        for (int i = 0; i < mem.size(); i++) {
+            if (mem.get(i).getID() == id) {
+                System.out.println("Found member with ID: " + id);
+                mem.remove(i);
+                return true;
+            }
+        }
+        System.out.println("Failed to delete member. Member with ID " + id + " not found.");
+        return false;
     }
+
 }

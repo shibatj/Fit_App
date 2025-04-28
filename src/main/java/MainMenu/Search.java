@@ -145,7 +145,7 @@ public class Search extends javax.swing.JFrame {
                 info.mem_show.setText(foundMember.getMembership()); 
 
                 int index = memberManager.getIndex();
-                info.setMemberIndex(foundMember, index);
+                info.setMemberIndex(foundMember, index, searchID);
 
                 info.setVisible(true);
 

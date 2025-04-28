@@ -5,7 +5,6 @@ setting\setting_page$3.class
 setting\new_info$4.class
 MainMenu\Info_Member$1.class
 MainMenu\Search$2.class
-MainMenu\Main_Menu$6.class
 java_class\Register_Manager.class
 MainMenu\New_Member$6.class
 LoginPage\Login_Page$2.class
@@ -16,6 +15,7 @@ MainMenu\Search$1.class
 setting\new_info$8.class
 MainMenu\Info_Member$2.class
 MainMenu\New_Member$2.class
+MainMenu\Info_Member$4.class
 setting\setting_page$4.class
 java_class\MemberManager.class
 MainMenu\Main_Menu$2.class
