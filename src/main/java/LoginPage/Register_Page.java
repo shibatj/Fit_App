@@ -248,14 +248,7 @@ public class Register_Page extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, message, "Success", JOptionPane.INFORMATION_MESSAGE);
         Login_Page log = new Login_Page();
         log.setVisible(true);
-        this.dispose();
-    }                                           
-
-    private void login_btn5ActionPerformed(java.awt.event.ActionEvent evt) {                                           
-        // TODO add your handling code here:
-        Login_Page log = new Login_Page();
-        log.setVisible(true);
-        this.dispose();
+        this.dispose();                                    
     }//GEN-LAST:event_regist_btnActionPerformed
 
     private void login_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login_btnActionPerformed

@@ -17,7 +17,6 @@ public class Search extends javax.swing.JFrame {
     private Main_Menu mainMenu = new Main_Menu();
     Info_Member info = new Info_Member();
     
-    private static final ArrayList<Member> members = new ArrayList<>();
     
     public Search() {
         initComponents();
@@ -137,12 +136,14 @@ public class Search extends javax.swing.JFrame {
             Member foundMember = memberManager.search(searchID);
 
             if (foundMember != null) {
+                String lockerid = Integer.toString(foundMember.getLockerID());
                 info.name_show.setText(foundMember.getName());
                 info.email_show.setText(foundMember.getEmail()); 
                 info.phone_show.setText(foundMember.getPhone()); 
                 info.loc_show.setText(foundMember.getLocation()); 
                 info.pac_show.setText(foundMember.getPackage()); 
                 info.mem_show.setText(foundMember.getMembership()); 
+                info.locker_show.setText(lockerid); 
 
                 int index = memberManager.getIndex();
                 info.setMemberIndex(foundMember, index, searchID);

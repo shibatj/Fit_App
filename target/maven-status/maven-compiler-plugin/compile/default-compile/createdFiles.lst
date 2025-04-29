@@ -1,7 +1,6 @@
 MainMenu\New_Member$3.class
 LoginPage\Register_Page$3.class
 MainMenu\Main_Menu$3.class
-setting\setting_page$3.class
 setting\new_info$4.class
 MainMenu\Info_Member$1.class
 MainMenu\Search$2.class
@@ -16,10 +15,8 @@ setting\new_info$8.class
 MainMenu\Info_Member$2.class
 MainMenu\New_Member$2.class
 MainMenu\Info_Member$4.class
-setting\setting_page$4.class
 java_class\MemberManager.class
 MainMenu\Main_Menu$2.class
-setting\setting_page.class
 LoginPage\Login_Page.class
 LoginPage\Login_Page$1.class
 MainMenu\New_Member.class
@@ -29,7 +26,6 @@ MainMenu\Main_Menu$5.class
 setting\new_info.class
 java_class\Register.class
 MainMenu\All_Member$3.class
-setting\setting_page$1.class
 MainMenu\New_Member$5.class
 MainMenu\Info_Member$3.class
 LoginPage\Login_Page$3.class
@@ -46,7 +42,6 @@ setting\new_info$2.class
 LoginPage\Register_Page.class
 java_class\Member.class
 LoginPage\Register_Page$2.class
-setting\setting_page$2.class
 MainMenu\Main_Menu$4.class
 MainMenu\All_Member.class
 setting\new_info$3.class
